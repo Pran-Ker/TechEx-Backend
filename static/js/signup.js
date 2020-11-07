@@ -1,4 +1,4 @@
-const signupAjax = async (name, email,phone, password, reenteredPassword,captcha) => {
+const signupAjax = async (name, email,phone, password, reenteredPassword) => {
     const res = await axios({
         method: "POST",
         url: "/signup",
@@ -8,18 +8,17 @@ const signupAjax = async (name, email,phone, password, reenteredPassword,captcha
         phone,
         password,
         reenteredPassword,
-        captcha,
         },
     });
 
-    // if (res.data.status === "captcha-not-done") {
-    //     showAlert("error", "Captcha not done!!");
-    //     document.querySelector("#submitBtn").disabled = false;
-    //     grecaptcha.reset();
-    // } else if (res.data.status === "Failed-captcha-verification") {
-    //     showAlert("error", "Captcha verification failed!! Try again");
-    //     document.querySelector("#submitBtn").disabled = false;
-    //     grecaptcha.reset();
+    if (res.data.status === "captcha-not-done") {
+        showAlert("error", "Captcha not done!!");
+        document.querySelector("#submitBtn").disabled = false;
+        grecaptcha.reset();
+    } else if (res.data.status === "Failed-captcha-verification") {
+        showAlert("error", "Captcha verification failed!! Try again");
+        document.querySelector("#submitBtn").disabled = false;
+        grecaptcha.reset();
       if (res.data.status === "email_exist") {
         showAlert("error", "Email already exists!");
         document.querySelector("#submitBtn").disabled = false;
@@ -45,6 +44,7 @@ var onSubmit = (token) => {
     const reenteredPassword = document.getElementById("rePassword").value;
     signupAjax(name, email, password,reenteredPassword,phone ,token);
 }
+
 
 
 const checkEmail = (input) => {

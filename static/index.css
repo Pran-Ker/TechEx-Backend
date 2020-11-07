@@ -5,7 +5,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: Helvetica;
-    font-size: 24px;
+    font-size: 35px;
 }
 button{
     font-weight: bolder;
@@ -15,6 +15,9 @@ button{
     text-decoration: none;
     background-color: #f58c57;
     color: black;
+}
+h2{
+    font-size: 1.7rem;
 }
 #menu{
     position: fixed;
@@ -54,7 +57,8 @@ button{
 .section{
     position: relative;
     margin-bottom: 30px;
-    display: grid;
+    display: flex;
+    justify-content: flex-start;
     
 }
 .bg{
@@ -96,7 +100,7 @@ button{
     margin: auto;
 }
 .sectionContainer>div>h1{
-    font-size: 2.5rem; 
+    font-size: 3rem; 
     padding: 0;
     margin: 0;
 }
@@ -106,12 +110,13 @@ button{
 }
 .sectionContainer#s2{
     justify-content: flex-end;
+    margin-left: 30%;
 }
 .sectionContainer>div>p{
-    max-width: 600px;
+    max-width: 60%;
 }
 .sectionContainer#s4{
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 #aboutCSI{
@@ -124,8 +129,9 @@ button{
 }
 
 #sec1content{
-    max-width: 50%;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin-top: 3%;
+    margin-bottom: 10%;
 }
 li{
     list-style: none;
@@ -139,9 +145,9 @@ li{
 #page1{
    z-index: 1;
    background-image: url(./img/bg.jpeg);
-   background-color: aliceblue;
    background-repeat: no-repeat;
    background-size: cover;
+   background-attachment: fixed;
    text-align: center;
 }
 #scroll{
@@ -166,7 +172,7 @@ a:hover{
 #phoneImg{
 position: absolute;
 top:10vh;
-left :20vw;
+left :50vw;
 height: 90%;
 width: auto;
 }
@@ -221,8 +227,11 @@ input[type=submit]{
 }
 #designcontent{
     max-width: 50%;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
     justify-content: right;
+    margin-top: 5%;
+    margin-bottom: 7%;
 }
 form{
     grid-column: span;
@@ -253,21 +262,6 @@ form{
     display: none;
   }
   
-  /* Next & previous buttons */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
   
   
   /* The dots/bullets/indicators */
@@ -315,7 +309,10 @@ form{
 
 
 
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: 1090px){
+    #page1{
+        background-image: none;
+    }
     #designcontent{
         max-width: 100%;
     }
@@ -337,6 +334,8 @@ form{
     }
     #sec1content{
         max-width: 100%;
+        line-height: 1.6;
+        font-size: 1.2rem;
     }
     .aboutAndReg{
         display: grid;
@@ -347,6 +346,9 @@ form{
     .sectionContainer>div{
         width: 60%;
     }
+   #s2.sectionContainer{
+       margin-left: 0;
+   }
     .slideshow-container {
         display: flex;
         justify-content: center;
@@ -405,6 +407,9 @@ form{
     .dates{
         margin-top: 0%;
     }
+    #designcontent{
+        margin-bottom: 5%;
+    }
     body{
         font-size: 13px;
     }
@@ -441,17 +446,19 @@ form{
         font-size: 10px;
     }
     #designcontent{
-        font-size: 0.8rem;
+        font-size: 1.0rem;
     }
     .sectioncontainer{
-        background-color: aqua;
         margin-top: 100px;
+    }
+    #sec1content{
+        margin-top: 8%;
     }
     #scroll{
         left: 29%;
     }
     .bg{
-        height: 90%;
+        height: 87%;
     }
     #controllerImg{
         display: none;

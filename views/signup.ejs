@@ -13,11 +13,13 @@
     integrity="sha512-pYyQWhzi2lV+RM4GmaUA56VPL48oLVvsHmP9tuQ8MaZMDHomVEDjXXnfSVKXayy+wLclKPte0KbsuVoFImtE7w==" 
     crossorigin="anonymous"></script>
     <script
-    src="https://kit.fontawesome.com/fc31dedf63.js"    crossorigin="anonymous"    ></script>
+    src="https://kit.fontawesome.com/fc31dedf63.js"    crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" 
         integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" 
         crossorigin="anonymous"></script>
+
+
     <link rel="icon" href="../static/img/favicon.ico" />
     <link rel="preload" as="script" href="../static/js/App.js">
     <link rel="stylesheet" href="../static/index.css"/>
@@ -39,7 +41,7 @@
         </div>
          <!-- INTRO TO PyGame -->
         <div class="section" id="page2">
-            <div class="bg sec2" ></div>
+            <div class="bg sec2"></div>
             <div class="sectionContainer" id="s2">
                 <div>
                 <h1><b>What is <span style="color: white;">TechEx</span></b></h1>
@@ -73,8 +75,8 @@
                         
                         Put your creative skills into use and learn with us at our workshop 
                         on UI design using Figma !
-                     </p>
-                     <h1 class="dates"><i class="far fa-calendar"></i>  18th November 2020</h1>
+                    </p>
+                     <h2 class="dates"><i class="far fa-calendar"  style="padding-right: 7px;"></i>  18<sup>th</sup> November 2020</h2>
                 </div>
             </div>
             <img src="../static/img/phoneAsset.svg"  id="phoneImg">
@@ -92,7 +94,7 @@
                     For making a game of your choice, a little bit of python programming is all you need to know. 
                     Learn Python the fun way by making games of your choice and discover the ease of coding with us
                  </p>
-                 <h1 class="dates"><i class="far fa-calendar"></i>  22nd November 2020</h1>
+                 <h2 class="dates"><i class="far fa-calendar"  style="padding-right: 7px;"></i>  22<sup>nd</sup> November 2020</h2>
                 </div>
                 
             </div>
@@ -153,13 +155,13 @@
                     <div id="registerForm">
                         <h1><b>Interested? Let's get you registered!</b></h1>
                         <form method="POST" action="">
-                            <input type="text" name="name" placeholder="Enter you name" id="name"/>
+                            <input type="text" name="name" placeholder="Enter your name" id="name"/>
                             <input type="email" name="email" placeholder="Email ID" id="email"/>
                             <input type="tel" name="mobile" pattern="[1-9][0-9]{9}" placeholder="Mobile Number" id="mobile"/>
                             <input type="password" name="password" placeholder="Enter password" id="password"/>
                             <input type="password" name="confirmedPassword" placeholder="Re-enter your password" id="rePassword"/>
                             </br>
-                            <div class="g-recaptcha" data-sitekey="6LdOnN4ZAAAAANbDp_hRP0r51cJGsmOBMPjbOiMq"></div>
+                            <div class="g-recaptcha" data-sitekey="6LeFNOAZAAAAAAKtE1U2fnt1Pz0-HMEZ1k4I44Xk"></div>
                             <input type="submit" value="REGISTER" id="submitBtn">
                             <div id="spitErrors" style="font-size: 0.9rem;"></div>
                         </form>
@@ -186,6 +188,8 @@
         <li data-menuanchor="uiwithfigma"><a class="nav-link" href="#uiwithfigma">Events</a></li>
         <li data-menuanchor="signup"><a class="nav-link" href="#signup">Register</a></li>
     </ul>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     
     <script src="../static/js/App.js"></script>
     

@@ -24,8 +24,9 @@ const findSec = (index) =>{
             if(destination.isFirst){
                 back.pause()
             }else if(direction==="down"){
-                if(!(destination.isLast))
+                if(!(destination.isLast)){
                     back.fromTo(sec,{rotation: -5},{rotation: 3,duration: 1.2,delay: 0.7});
+                }
             }
             else if(direction==="up"){
                 if(!(destination.isFirst))  
