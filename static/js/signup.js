@@ -12,26 +12,27 @@ const signupAjax = async (name, email, phone, password, reenteredPassword) => {
             reenteredPassword,
             },
         });
-    
-        if (res.data.status === 'captcha-not-done') {
-            showAlert('error', 'Captcha not done!!');
-            document.querySelector('#submitBtn').disabled = false;
-            grecaptcha.reset();
-        } else if (res.data.status === 'Failed-captcha-verification') {
-            showAlert('error', 'Captcha verification failed!! Try again');
-            document.querySelector('#submitBtn').disabled = false;
-            grecaptcha.reset();
-          if (res.data.status === 'email_exist') {
-            showAlert('error', 'Email already exists!');
-            document.querySelector('#submitBtn').disabled = false;
-        } else if (res.data.status === 'name_exist') {
-            showAlert('error', 'Name already taken!');
-            document.querySelector('#submitBtn').disabled = false;
-        } else if (res.data.status === 'success') {
-            showAlert('success', 'Signup Successfull.
-            Verify to continue');
-        }
-    }
+        
+        console.log(res.data);
+        
+        //     if (res.data.status === 'captcha-not-done') {
+        //         showAlert('error', 'Captcha not done!!');
+        //         document.querySelector('#submitBtn').disabled = false;
+        //         grecaptcha.reset();
+        //     } else if (res.data.status === 'Failed-captcha-verification') {
+        //         showAlert('error', 'Captcha verification failed!! Try again');
+        //         document.querySelector('#submitBtn').disabled = false;
+        //         grecaptcha.reset();
+        //       if (res.data.status === 'email_exist') {
+        //         showAlert('error', 'Email already exists!');
+        //         document.querySelector('#submitBtn').disabled = false;
+        //     } else if (res.data.status === 'name_exist') {
+        //         showAlert('error', 'Name already taken!');
+        //         document.querySelector('#submitBtn').disabled = false;
+        //     } else if (res.data.status === 'success') {
+        //         showAlert('success', 'Signup Successfull.Verify to continue');
+        //     }
+        // }
 };
 function showAlert(type, message) {
   if(type === 'sucess')

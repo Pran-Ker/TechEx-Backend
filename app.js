@@ -1,12 +1,12 @@
 require('dotenv').config();
-require('./models/dbInit');
+// require('./models/dbInit');
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
 const path = require('path');
-const User = require('./models/User');
+// const User = require('./models/User');
 const { hashPassword } = require('./static/js/hash');
 
 const app = express();
@@ -51,37 +51,38 @@ app.post('/', async (req, res) => {
   // }
 
   if (!(typeof req.body.email === 'string' && typeof req.body.password === 'string')) {
-    res.json('Wrong');
+    res.json({status:'Invalid'});
     return 1;
   }
 
   if (req.body.email.length > 150 || req.body.password.length > 150
     || req.body.name.length > 150) {
-    res.json('Too long');
+    res.json({status:'Invalid'});
     return 2;
   }
 
   console.log('2');
 
-  const newUser = new User({
-    email: req.body.email,
-    name: req.body.name,
-    phone: req.body.phone,
-    password: await hashPassword(req.body.password),
-    timestamp: Date.now(),
-    verified: false,
-  });
-  let student;
-  try {
-    student = await newUser.save();
-    console.log('3');
-  } catch (e) {
-    console.log(`Error occured: ${e}`);
-    return 7;
-  }
-  res.send({ status: 'success' });
+  // const newUser = new User({
+  //   email: req.body.email,
+  //   name: req.body.name,
+  //   phone: req.body.phone,
+  //   password: await hashPassword(req.body.password),
+  //   timestamp: Date.now(),
+  //   verified: false,
+  // });
 
-  return res.json({ success: true, msg: 'Form submitted' });
+  // let student;
+  // try {
+  //   student = await newUser.save();
+  //   console.log('3');
+  // } catch (e) {
+  //   console.log(`Error occured: ${e}`);
+  //   return 7;
+  // }
+  
+  res.json({ status: 'success' });
+
 });
 
 
