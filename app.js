@@ -51,13 +51,13 @@ app.post('/', async (req, res) => {
   // }
 
   if (!(typeof req.body.email === 'string' && typeof req.body.password === 'string')) {
-    res.json({status:'Invalid'});
+    res.send({'status':'Invalid'});
     return 1;
   }
 
   if (req.body.email.length > 150 || req.body.password.length > 150
     || req.body.name.length > 150) {
-    res.json({status:'Invalid'});
+    res.send({'status':'Invalid'});
     return 2;
   }
 
@@ -80,8 +80,8 @@ app.post('/', async (req, res) => {
   //   console.log(`Error occured: ${e}`);
   //   return 7;
   // }
-  
-  res.json({ status: 'success' });
+
+  res.send({ 'status': 'success' });
 
 });
 
